@@ -5,7 +5,7 @@ class Solution0001TwoSum {
         if ((nums.size == 2) && (nums[0] == nums[1])) {
             return intArrayOf(0,1)
         }
-        for (i in nums.iterator().withIndex()) {}
+
         for ((index1, value1) in nums.iterator().withIndex()) {
             for ((index2, value2) in nums.iterator().withIndex()) {
                 if (index1 == index2) {
