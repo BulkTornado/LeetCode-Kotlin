@@ -5,15 +5,15 @@ class Solution0001TwoSum {
         if ((nums.size == 2) && (nums[0] == nums[1])) {
             return intArrayOf(0,1)
         }
-
-        for (i in nums.iterator().withIndex()) {
-            for (j in nums.iterator().withIndex()) {
-                if (i.index == j.index) {
+        for (i in nums.iterator().withIndex()) {}
+        for ((index1, value1) in nums.iterator().withIndex()) {
+            for ((index2, value2) in nums.iterator().withIndex()) {
+                if (index1 == index2) {
                     // Pass
                 }
 
-                if ( (i.value != j.value) && (i.value + j.value == target) ) {
-                    return intArrayOf(i.index, j.index)
+                if ( (value1 != value2) && (value1 + value2 == target) ) {
+                    return intArrayOf(index1, index2)
                 }
             }
         }
