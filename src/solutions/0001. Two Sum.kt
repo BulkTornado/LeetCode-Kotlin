@@ -2,21 +2,19 @@ package solutions
 
 class Solution0001TwoSum {
     fun twoSum(nums: IntArray, target: Int): IntArray {
-        if ((nums.size == 2) && (nums[0] == nums[1])) {
-            return intArrayOf(0,1)
-        }
+        val hashmap = HashMap<Int, Int>()
 
-        for ((index1, value1) in nums.iterator().withIndex()) {
-            for ((index2, value2) in nums.iterator().withIndex()) {
-                if (index1 == index2) {
-                    // Pass
-                }
+        var complement: Int
 
-                if ( (value1 != value2) && (value1 + value2 == target) ) {
-                    return intArrayOf(index1, index2)
-                }
+        for (i in nums.indices) {
+            complement = target - nums[i]
+            if ((complement in hashmap) && hashmap[complement] != i) {
+                return intArrayOf(i, hashmap[complement]!!)
             }
+            hashmap[nums[i]] = i
         }
+
+        // If no valid pair is found, return an empty array
         return intArrayOf()
     }
 }
