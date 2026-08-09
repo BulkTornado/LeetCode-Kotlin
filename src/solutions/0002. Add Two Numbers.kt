@@ -17,7 +17,7 @@ class Solution0002AddTwoNumbers {
         var l1Copy: ListNode? = l1
         var l2Copy: ListNode? = l2
 
-        var result: ListNode? = ListNode(0)
+        val result: ListNode? = ListNode(0)
         var cur: ListNode? = result
 
         var carry: Int = 0
