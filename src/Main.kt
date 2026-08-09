@@ -1,20 +1,24 @@
-import solutions.Solution0001TwoSum
+import solutions.Solution0002AddTwoNumbers
+import leetCodeTypes.ListNode
 
 fun main() {
-    val test = Solution0001TwoSum()
+    val solution = Solution0002AddTwoNumbers()
 
     // Test 1
-    val nums01 = intArrayOf(2,7,11,15)
-    val result01 = test.twoSum(nums01, 9)
-    println(result01.contentToString())
+    val l11: ListNode? = ListNode.listToLinkedList(intArrayOf(2,4,3))
+    val l21: ListNode? = ListNode.listToLinkedList(intArrayOf(5,6,4))
+    val result01: ListNode? = solution.addTwoNumbers(l11, l21)
+    println(result01)
 
     // Test 2
-    val nums02 = intArrayOf(3,2,4)
-    val result02 = test.twoSum(nums02, 6)
-    println(result02.contentToString())
+    val l12: ListNode? = ListNode.listToLinkedList(intArrayOf(0))
+    val l22: ListNode? = ListNode.listToLinkedList(intArrayOf(0))
+    val result02: ListNode? = solution.addTwoNumbers(l12, l22)
+    println(result02)
 
     // Test 3
-    val nums03 = intArrayOf(3,3)
-    val result03 = test.twoSum(nums03, 6)
-    println(result03.contentToString())
+    val l13: ListNode? = ListNode.listToLinkedList(intArrayOf(9,9,9,9,9,9,9))
+    val l23: ListNode? = ListNode.listToLinkedList(intArrayOf(9,9,9,9))
+    val result03: ListNode? = solution.addTwoNumbers(l13, l23)
+    println(result03)
 }
