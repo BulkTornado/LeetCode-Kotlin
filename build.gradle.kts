@@ -3,6 +3,9 @@ plugins {
     application
 }
 
+group = "org.example"
+version = "0.1"
+
 repositories {
     mavenCentral()
 }
@@ -21,4 +24,8 @@ application {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "MainKt"
 }
