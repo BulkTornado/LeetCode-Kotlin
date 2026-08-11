@@ -1,6 +1,6 @@
 package solutions
 
-import leetCodeTypes.ListNode
+import leetcodeTypes.ListNode
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
 
