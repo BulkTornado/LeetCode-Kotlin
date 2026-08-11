@@ -1,6 +1,6 @@
 package solutions
 
-import leetCodeTypes.ListNode
+import leetcodeTypes.ListNode
 
 /**
  * Example:

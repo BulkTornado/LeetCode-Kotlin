@@ -1,24 +1,36 @@
-import solutions.Solution0002AddTwoNumbers
-import leetCodeTypes.ListNode
+import java.nio.file.Path
+import kotlin.io.path.*
+
+val root = Path(".")
+val problems = root / "problems"
+val solutions = root / "src" / "main" / "kotlin" / "solutions"
+val leetcodeTypes = root / "src" / "main" / "kotlin" / "leetcodeTypes"
+val tests = root / "src" / "test" / "kotlin" / "solutions"
+
+fun countFiles(directory: Path, pattern: String): Int {
+    return directory.listDirectoryEntries(pattern).size
+}
 
 fun main() {
-    val solution = Solution0002AddTwoNumbers()
+    val problemsCount       = countFiles(problems, "*.md")
+    val solutionsCount      = countFiles(solutions, "*.kt")
+    val leetcodeTypesCount  = countFiles(leetcodeTypes, "*.kt")
+    val testsCount          = countFiles(tests, "*Test.kt")
 
-    // Test 1
-    val l11: ListNode? = ListNode.listToLinkedList(intArrayOf(2,4,3))
-    val l21: ListNode? = ListNode.listToLinkedList(intArrayOf(5,6,4))
-    val result01: ListNode? = solution.addTwoNumbers(l11, l21)
-    println(result01)
-
-    // Test 2
-    val l12: ListNode? = ListNode.listToLinkedList(intArrayOf(0))
-    val l22: ListNode? = ListNode.listToLinkedList(intArrayOf(0))
-    val result02: ListNode? = solution.addTwoNumbers(l12, l22)
-    println(result02)
-
-    // Test 3
-    val l13: ListNode? = ListNode.listToLinkedList(intArrayOf(9,9,9,9,9,9,9))
-    val l23: ListNode? = ListNode.listToLinkedList(intArrayOf(9,9,9,9))
-    val result03: ListNode? = solution.addTwoNumbers(l13, l23)
-    println(result03)
+    println()
+    println("LeetCode Solutions in Kotlin/Java")
+    println()
+    println("Problems       : ${problems.toString().padEnd(31)} : $problemsCount")
+    println("Solutions      : ${solutions.toString().padEnd(31)} : $solutionsCount")
+    println("LeetCode Types : ${leetcodeTypes.toString().padEnd(31)} : $leetcodeTypesCount")
+    println("Tests          : ${tests.toString().padEnd(31)} : $testsCount")
+    println()
+    println("Run all tests:")
+    println("   ./gradlew test")
+    println()
+    println("Run a specific test:")
+    println("   ./gradle test ?")
+    println()
+    println("Run a specific unit test:")
+    println("   ./gradle test ?")
 }
